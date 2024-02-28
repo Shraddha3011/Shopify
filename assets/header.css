@@ -1,20 +1,11 @@
 
 header {
-    background-color: #333;
-    color: #fff;
     padding: 20px 0;
+    margin-right: 2rem;
 }
 
 .container {
     width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.logo {
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 nav {
@@ -37,9 +28,9 @@ nav ul li:first-child {
 }
 
 nav ul li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 nav ul li a:hover {

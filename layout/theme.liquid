@@ -8,15 +8,11 @@
 </head>
 <body>
     {% section 'header' %}
-    
     <main role="main">
         {{ content_for_layout }}
     </main>
+    {% section  'footer' %}
     
-    {% section 'footer' %}
-    {% comment %} Conditional Tags {% endcomment %}
-{% if 2==2 %}
-    This is if conditional Statement
-{% endif %}
+
 </body>
 </html>

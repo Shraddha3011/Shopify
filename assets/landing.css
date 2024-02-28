@@ -1,16 +1,20 @@
-
+.container{
+    display: flex;
+    justify-content: center;
+}
 .landing-page {
-    background-color: #f4f4f4;
     padding: 50px 0;
 }
 
 .landing-content {
     text-align: center;
+    margin-top: 4rem;
+    margin-right: 8rem;
+
 }
 
 .landing-content h2 {
     font-size: 32px;
-    margin-bottom: 20px;
 }
 
 .landing-content p {
