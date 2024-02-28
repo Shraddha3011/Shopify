@@ -3,12 +3,32 @@
 
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href= "/pages/about">About</a></li>
+                {%for link in linklists[section.settings.main_linklist].links%}
+                    {%if link.links==blank%}
+                <li><a href="{{link.url}}">{link.title}</a></li>
+                {%endif%}
+                {% comment %} {%if link.links!=blank%} {% endcomment %}
+                <li><a href="{{ url_for('page', 'about') }}">About</a></li>
                 <li><a href="/collections/all">Products</a></li>
                 <li><a href="/cart">Cart</a></li>
                 <li><a href="/pages/contact">Contact</a></li>
+                {%endfor%}
             </ul>
         </nav>
 </header>
+
+{% include  "menu"%}
+{% schema  %} 
+{
+    "name":"Main menu",
+    "settings": [
+        {
+            "type":"link_list",
+            "id":"main_linklist",
+            "label": "Menu",
+            "default": "main-menu"
+        }
+    ]
+}
+ {% endschema %}
 
