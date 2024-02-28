@@ -1,38 +1,31 @@
-
-header {
-    padding: 20px 0;
-    margin-right: 2rem;
-}
-
-.container {
-    width: 80%;
-}
-
-nav {
-    float: right;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
+/* .header-nav{
+    display: flex;
+    justify-content: space-evenly;
+    margin:0;
     padding: 0;
-}
+} */
+.header-left{
+    float:left;
 
-nav ul li {
-    display: inline;
-    margin-left: 20px;
 }
-
-nav ul li:first-child {
-    margin-left: 0;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
+.header-right{
+    float:right;
+    display: flex;
     font-size: 18px;
+    margin-right: 20px;
+}
+.header-right li{
+    margin-top: 1rem;
+    padding: 10px;
+    list-style-type: none;
 }
 
-nav ul li a:hover {
-    color: #ffd700; 
+.header-right a{
+    color: inherit;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.header-right li:hover{
+   color: blue;
 }

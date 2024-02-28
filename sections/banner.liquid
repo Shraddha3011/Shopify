@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="{{ 'landing.css' | asset_url }}" media="print" onload="this.media='all'">
+<section class="landing-page">
+    <div class="container">
+        <div class="landing-content">
+            <h2>Welcome to MediMart</h2>
+            <p>Your trusted online pharmacy for all your medication needs.</p>
+        </div>
+        <div class="landing-image">
+            <img src="{{ 'landing1.jpg' | asset_url }}" alt="MediMart">
+        </div>
+    </div>
+</section>
+{%  schema  %} 
+{
+    "name":"Banner",
+    "settings":[],
+    "presets": [
+        {
+            "name":"banner"
+        }
+    ]
+}
+ {% endschema %}

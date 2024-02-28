@@ -1,0 +1,12 @@
+<section>
+    <h1>Featured Collection</h1>
+    {% assign watch_collection = collections['watch-collection'] %}
+    {% if watch_collection %}
+        {% for product in watch_collection.products %}
+            <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
+            <p>{{ product.title }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No products found in the 'watch' collection.</p>
+    {% endif %}
+</section>

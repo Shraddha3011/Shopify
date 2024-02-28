@@ -8,17 +8,10 @@
 </head>
 <body>
     {% section 'header' %}
-    <main role="main">
-        {% if template == 'page' %}
-            {% if page.handle == 'about' %}
-                {% section 'about' %}
-            {% endif %}
-        {% else %}
+    <main id="main" role="main">
             {{ content_for_layout }}
-        {% endif %}
     </main>
-    {% section  'footer' %}
-    
+    {% section 'footer' %}
 
 </body>
 </html>
