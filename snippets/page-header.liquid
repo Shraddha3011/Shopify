@@ -1,11 +1,18 @@
 <section class="page-header">
   <div class="title">{{ page_title }}</div>
-  <img src="{{ page_image | img_url: 'medium' }}" alt="{{ page_title }}"><br>
- <div class="desc">{{ page_description }}</div><br>
-
+<div>{{page.content}}</div>
 </section>
 
 <style>
+
+  .title{
+    font-size: 30px;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+
+  }
   .desc{
     font-size: 20px;
   }

@@ -7,10 +7,14 @@
         "featured-collection": {
             "type": "featured-collection",
             "settings": {}
-        }
+        },  "all-collections": {
+            "type": "all-collections",
+            "settings": {}
+          }
     },
     "order": [
         "banner",
-        "featured-collection"
+        "featured-collection",
+        "all-collections"
     ]
 }
