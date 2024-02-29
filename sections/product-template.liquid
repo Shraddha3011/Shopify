@@ -1,0 +1,65 @@
+<div class="product-details">
+    <div class="product-images">
+        {% for image in product.images %}
+            <img src="{{ image.src | img_url: 'medium' }}" alt="{{ product.title }}">
+        {% endfor %}
+    </div>
+    <div class="product-info">
+        <h1>{{ product.title }}</h1>
+        <div class="product-price">
+            <p>Price: {{ product.price | money }}</p>
+            {% if product.compare_at_price > product.price %}
+                <p>Compare at: {{ product.compare_at_price | money }}</p>
+            {% endif %}
+        </div>
+        <div class="product-description">
+            {{ product.description }}
+        </div>
+         <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+        </form>
+    </div>
+</div>
+<style>
+.product-details {
+  margin:3rem;
+    display: flex;
+  justify-content:center;
+  margin-bottom:7rem;
+}
+
+.product-images {
+    padding-right: 20px; 
+}
+
+.product-info {
+    flex: 0 0 50%; 
+}
+
+.product-images img {
+    max-width: 100%; 
+    height: auto;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.product-info h1 {
+    font-size: 24px; 
+}
+
+.product-price {
+    margin-top: 10px;
+}
+
+.product-description {
+    margin-top: 10px;
+}
+  </style>
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}

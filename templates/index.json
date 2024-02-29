@@ -1,20 +1,18 @@
 {
-    "sections": {
-        "banner": {
-            "type": "banner",
-            "settings": {}
-        },
-        "featured-collection": {
-            "type": "featured-collection",
-            "settings": {}
-        },  "all-collections": {
-            "type": "all-collections",
-            "settings": {}
-          }
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "settings": {
+      }
     },
-    "order": [
-        "banner",
-        "featured-collection",
-        "all-collections"
-    ]
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "featured-collection"
+  ]
 }
