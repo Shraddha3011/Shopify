@@ -10,6 +10,9 @@
                         <div class="product-info">
                             <p class="product-title">{{ product.title }}</p>
                             <p class="product-price">{{ product.price | money }}</p>
+                            {% if product.compare_at_price > product.price %}
+                                <p class="compared-price">Compare at: {{ product.compare_at_price | money }}</p>
+                            {% endif %}
                             <a href="{{ product.url }}" class="product-link">View Product</a>
                         </div>
                     </div>
@@ -72,6 +75,12 @@
     .product-price {
         font-size: 16px;
         color: #333;
+    }
+
+    .compared-price {
+        font-size: 14px;
+        color: #FF5733; 
+        margin-top: 5px;
     }
 
     .product-link {
