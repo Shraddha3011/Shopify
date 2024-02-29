@@ -15,7 +15,10 @@
         <div class="product-description">
             {{ product.description }}
         </div>
-        <!-- Additional product details such as variants, options, etc. -->
+         <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+            <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+        </form>
     </div>
 </div>
 <style>
