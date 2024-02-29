@@ -1,8 +1,12 @@
 <section class="page-header">
-  {{ page_title }}<br>
-  <img src="{{ page_image | img_url: 'medium' }}" alt="{{ page_title }}">
-  {{ page_description }}
+  <div class="title">{{ page_title }}</div>
+  <img src="{{ page_image | img_url: 'medium' }}" alt="{{ page_title }}"><br>
+ <div class="desc">{{ page_description }}</div><br>
+
 </section>
 
-
-
+<style>
+  .desc{
+    font-size: 20px;
+  }
+</style>

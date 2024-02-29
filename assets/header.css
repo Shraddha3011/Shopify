@@ -1,31 +1,38 @@
-/* .header-nav{
+/* Apply styles to header */
+.header-nav {
+    background-color: #94e3fb; /* Light gray background */
+    box-shadow: 0 0 10px rgba(138, 189, 234, 0.5);
+   height: 4rem;
+   justify-content: center;
+}
+
+/* Style the left side of the header */
+.header-left {
+    float: left;
+}
+
+/* Style the right side of the header */
+.header-right {
+    float: right;
     display: flex;
-    justify-content: space-evenly;
-    margin:0;
-    padding: 0;
-} */
-.header-left{
-    float:left;
-
-}
-.header-right{
-    float:right;
-    display: flex;
-    font-size: 18px;
-    margin-right: 20px;
-}
-.header-right li{
-    margin-top: 1rem;
-    padding: 10px;
-    list-style-type: none;
+    align-items: center; /* Align items vertically */
 }
 
-.header-right a{
-    color: inherit;
-    text-decoration: none;
-    margin-top: 20px;
+/* Style the list items */
+.header-right li {
+    margin-right: 60px; /* Add some space between items */
+    list-style-type: none; /* Remove default bullet points */
+    margin-top: 1.5rem;
+    font-size: 20px;
 }
 
-.header-right li:hover{
-   color: blue;
+/* Style the links */
+.header-right a {
+    color: #333; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Change link color on hover */
+.header-right li:hover a {
+    color: blue;
 }

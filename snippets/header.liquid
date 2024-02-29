@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ 'header.css' | asset_url }}" media="print" onload="this.media='all'">
-<header class="header-nav">
+<div class="header-nav">
     <div class="header-left">
-        <img src="{{ 'logo.png' | asset_url }}" height="70px" width="200px">
+        {% comment %} <img src="{{ 'logo.png' | asset_url }}" height="70px" width="200px"> {% endcomment %}
     </div>
     <div  class="header-right">
         {%for link in linklists['main-menu'].links%}
@@ -9,4 +9,4 @@
         {% endfor %}
 
     </div>
-</header>
+</div>

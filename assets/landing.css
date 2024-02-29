@@ -9,7 +9,7 @@
 
 .landing-content {
     text-align: center;
-    margin-top: 7em;
+    margin-top: em;
     margin-right: 8rem;
 
 }
@@ -19,12 +19,12 @@
 }
 
 .landing-content p {
-    font-size: 18px;
+    font-size: 22px;
     color: #666;
 }
 
 .landing-image img {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     width: 110%; 
     height: 70vh; 
 }
