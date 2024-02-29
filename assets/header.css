@@ -41,7 +41,7 @@
 
 .header-right li:hover a {
     text-decoration: underline;
-    color: blue;
+    color: black;
     transform: scale(1.05);
     transition: transform 0.3s ease;
     opacity: 1;
