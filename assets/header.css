@@ -1,7 +1,7 @@
 /* Apply styles to header */
 .header-nav {
     /* background-color: #88dffb7c;*/
-   /* box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.45);  */
+   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.45); 
     background-color: rgb(64, 64, 64);
    /* background: linear-gradient(109.5deg, rgb(76, 221, 242) 11.2%, rgb(92, 121, 255) 91.1%); */
    height: 4rem;
