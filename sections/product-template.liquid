@@ -1,21 +1,55 @@
 <div class="product-details">
-    <h1>{{ product.title }}</h1>
     <div class="product-images">
         {% for image in product.images %}
             <img src="{{ image.src | img_url: 'medium' }}" alt="{{ product.title }}">
         {% endfor %}
     </div>
-    <div class="product-description">
-        {{ product.description }}
+    <div class="product-info">
+        <h1>{{ product.title }}</h1>
+        <div class="product-price">
+            <p>Price: {{ product.price | money }}</p>
+            {% if product.compare_at_price > product.price %}
+                <p>Compare at: {{ product.compare_at_price | money }}</p>
+            {% endif %}
+        </div>
+        <div class="product-description">
+            {{ product.description }}
+        </div>
+        <!-- Additional product details such as variants, options, etc. -->
     </div>
-    <div class="product-price">
-        <p>Price: {{ product.price | money }}</p>
-        {% if product.compare_at_price > product.price %}
-            <p>Compare at: {{ product.compare_at_price | money }}</p>
-        {% endif %}
-    </div>
-    <!-- Additional product details such as variants, options, etc. -->
 </div>
+<style>
+.product-details {
+    display: flex;
+}
+
+.product-images {
+    flex: 0 0 50%;
+    padding-right: 20px; 
+}
+
+.product-info {
+    flex: 0 0 50%; 
+}
+
+.product-images img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.product-info h1 {
+    font-size: 24px; 
+}
+
+.product-price {
+    margin-top: 10px;
+}
+
+.product-description {
+    margin-top: 10px;
+}
+  </style>
+
 
 {% schema %}
   {
