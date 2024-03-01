@@ -8,7 +8,6 @@
         {%for link in linklists['main-menu'].links%}
             <li>{{link.title | link_to:link.url}}</li>
         {% endfor %}
-        <li>{{ 'All Products' | link_to: '/collections/all' }}</li>
 
     </div>
 </div>
