@@ -1,0 +1,19 @@
+{% comment %}
+    Get all collections
+{% endcomment %}
+{% assign collections = collections.all %}
+{% for collection in collections %}
+    <h2>{{ collection.title }}</h2>
+    {% comment %}
+        Get products for the current collection
+    {% endcomment %}
+    {% assign products = collection.products %}
+    <ul>
+        {% for product in products %}
+            <li>
+                <h3>{{ product.title }}</h3>
+                <p>Price: {{ product.price | money }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endfor %}

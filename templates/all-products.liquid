@@ -5,8 +5,6 @@
         {% for image in product.images %}
             <img src="{{ image.src | img_url: 'medium' }}" alt="{{ product.title }}">
         {% endfor %}
-        <!-- Add more product details as needed -->
         <a href="{{ product.url }}">View Product</a>
-        <!-- You can also add an "Add to Cart" button here if needed -->
     </div>
 {% endfor %}

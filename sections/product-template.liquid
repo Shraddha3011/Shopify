@@ -15,13 +15,18 @@
         <div class="product-description">
             {{ product.description }}
         </div>
-         <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-            <button type="submit" class="btn-add-to-cart">Add to Cart</button>
-        </form>
+        <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+        <button type="submit" class="btn-add-to-cart">Add to Cart</button>
+    </form>
     </div>
 </div>
 <style>
+  .product-description{
+    font-size:22px
+  }
 .product-details {
   margin:3rem;
     display: flex;
@@ -45,11 +50,12 @@
 }
 
 .product-info h1 {
-    font-size: 24px; 
+    font-size: 30px; 
 }
 
 .product-price {
     margin-top: 10px;
+  font-size:22px
 }
 
 .product-description {
