@@ -7,13 +7,20 @@
     {% comment %}
         Get products for the current collection
     {% endcomment %}
-    {% assign products = collection.products %}
-    <ul>
-        {% for product in products %}
-            <li>
-                <h3>{{ product.title }}</h3>
-                <p>Price: {{ product.price | money }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+    {% assign custom_products = '' %}
+    {% for product in collections['all'].products %}
+        {% assign custom_products = custom_products | append: product %}
+    {% endfor %}
+
 {% endfor %}
+{% capture custom_products %}
+    {% for product in collections['all'].products %}
+      {{ custom_products }},{{ product.handle }}
+    {% endfor %}
+  {% endcapture %}
+  
+  {% assign custom_products = custom_products | split: ',' %}
+  
+  {% for product in custom_products %}
+    {{ all_products[product].title }}
+  {% endfor %}
