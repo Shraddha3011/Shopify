@@ -8,22 +8,21 @@
             <li>{{ link.title | link_to:link.url }}</li>
         {% endfor %}
         
-        <!-- Cart Icon -->
         <input type="checkbox" id="cart-toggle" class="cart-toggle">
         <label for="cart-toggle" class="cart-icon">
             <img src="{{ 'cart3.png' | asset_url }}" alt="Cart">
         </label>
         
-        <!-- Cart Slider -->
+    
         <div class="cart-slider">
+            <a href="/cart" class="view-cart">View Cart</a> 
             <div class="slider-container">
                 <ul class="slider">
                     {% for item in cart.items %}
                         <li>
                             <img src="{{ item.product.featured_image.src | img_url: 'medium' }}" alt="{{ item.product.title }}">
-                            <p>{{ item.product.title }}</p>
+                           <p>{{ item.product.title }}</p>
                             <p>{{ item.quantity }} x {{ item.price | money }}</p>
-                            <button class="remove-from-cart" data-id="{{ item.id }}">Remove</button> <!-- Add remove button -->
                         </li>
                     {% endfor %}
                 </ul>
@@ -33,37 +32,42 @@
 </div>
 
 <style>
-/* Styles for the cart icon */
+.view-cart{
+    font-size: 18px;
+    color: blue !important;
+    float: right;
+}
 .cart-icon {
-    cursor: pointer; /* Change cursor to indicate clickable element */
+    cursor: pointer; 
 }
 
-/* Hide the checkbox input */
+
 .cart-toggle {
     display: none;
 }
 
-/* Styles for the cart slider */
+
 .cart-slider {
     position: absolute;
     top: 0;
-    right: -600px; /* Position off-screen initially */
-    width: 300px; /* Set the width of the slider */
-    height:169%; /* Set the height of the slider */
+    width: 300px; 
+    height:100vh; 
     background-color: white;
-    border-left: 1px solid #ccc; /* Add a border for the slider */
+    border-left: 1px solid #ccc; 
     padding: 20px;
     z-index: 999;
-    transition: right 0.3s ease; /* Smooth transition for animation */
+    transition: right 0.3s ease; 
     margin-top: 4rem;
+    display: none;
 }
 
-/* Use the :checked pseudo-class and adjacent sibling selector to show/hide the cart slider */
+
 .cart-toggle:checked + .cart-icon + .cart-slider {
-    right: 0; /* Slide the cart slider into view when checkbox is checked */
+    right: 0; 
+    display: block; 
 }
 
-/* Styles for the slider container and items */
+
 .slider-container {
     overflow: hidden;
 }
@@ -74,7 +78,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Add spacing between slider items */
+    gap: 10px; 
 }
 
 .slider li img {
@@ -87,7 +91,6 @@
     font-size: 14px;
 }
 
-/* Style for the remove button */
 .remove-from-cart {
     background-color: #ff6666;
     color: white;
