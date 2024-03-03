@@ -7,7 +7,7 @@
           <div class="product-row">
             {% for product in collection.products %}
               <div class="product-card">
-                <img width="150" height="150" src="{{ product.featured_image | image_url}}">
+                <img src="{{ product.featured_image | image_url}}">
                 <h4>{{- product.title | link_to: product.url }}</h4>
                 <p>Price: {{ product.price | money }}</p>
               </div>
@@ -21,3 +21,45 @@
     {% endif %}
   {% endfor %}
 </div>
+<style>
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 200px; 
+}
+
+.product-card img {
+  width: 80%; 
+}
+img{
+  height: 300px !important;
+}
+
+.product-card h4 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.product-card p {
+  margin-top: 5px;
+}
+
+.show-all-button {
+  margin-top: 20px;
+}
+
+.show-all-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.show-all-button a:hover {
+  background-color: #0056b3; 
+}
+
+</style>

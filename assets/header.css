@@ -46,10 +46,10 @@
     transition: transform 0.3s ease;
     opacity: 1;
 }
-img{
+.cart-icon img{
   align-items: center;
   margin-right: 20px;
   margin-top: 15px;
-  height:30px;
-   width:35px;
+  height:30px !important;
+   width:35px !important;
 }
