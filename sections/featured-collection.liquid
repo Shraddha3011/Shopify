@@ -11,7 +11,7 @@
       {% for product in skin_care.products %}
         <div class="product">
           <div class="product-card">
-            <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
+            <!-- <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}"> -->
             <div class="product-info">
               <p class="product-title">{{ product.title }}</p>
               <p class="product-price">{{ product.price | money }}</p>
