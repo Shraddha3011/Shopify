@@ -1,9 +1,8 @@
 <section class="featured-products">
     <h1>Featured Collection</h1>
     <div class="product-container">
-        {% assign watch_collection = collections['Skin care '] %}
-        {% if watch_collection %}
-            {% for product in watch_collection.products %}
+        {% assign skin_care = collections['Skin care'] %}
+            {% for product in skin_care.products %}
                 <div class="product">
                     <div class="product-card">
                         <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
@@ -18,9 +17,6 @@
                     </div>
                 </div>
             {% endfor %}
-        {% else %}
-            <p>No products found in the 'watch' collection.</p>
-        {% endif %}
     </div>
 </section>
 
