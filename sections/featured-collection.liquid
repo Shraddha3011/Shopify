@@ -1,22 +1,32 @@
 <section class="featured-products">
     <h1>Featured Collection</h1>
     <div class="product-container">
-        {% assign skin_care = collections['Skin care'] %}
-            {% for product in skin_care.products %}
-                <div class="product">
-                    <div class="product-card">
-                        <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
-                        <div class="product-info">
-                            <p class="product-title">{{ product.title }}</p>
-                            <p class="product-price">{{ product.price | money }}</p>
-                            {% if product.compare_at_price > product.price %}
-                                <p class="compared-price"><s>Compare at: {{ product.compare_at_price | money }}</s></p>
-                            {% endif %}
-                           <a href="{{ product.url }}" class="product-link">View Product</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+        {% assign skin_care = collections['skin'] %}
+
+{% if skin_care %}
+  <section class="featured-products">
+    <div class="product-container">
+      {% for product in skin_care.products %}
+        <div class="product">
+          <div class="product-card">
+            <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
+            <div class="product-info">
+              <p class="product-title">{{ product.title }}</p>
+              <p class="product-price">{{ product.price | money }}</p>
+              {% if product.compare_at_price > product.price %}
+                <p class="compared-price"><s>Compare at: {{ product.compare_at_price | money }}</s></p>
+              {% endif %}
+              <a href="{{ product.url }}" class="product-link">View Product</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% else %}
+  <p>No products found in the 'Skin care' collection.</p>
+{% endif %}
+
     </div>
 </section>
 
@@ -54,8 +64,8 @@
     }
 
     .product img {
-        max-width: 100%; 
-        height: auto; 
+        max-width: 80%; 
+        height:300px; 
         border-radius: 8px;
     }
 

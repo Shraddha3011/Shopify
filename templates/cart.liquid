@@ -1,7 +1,9 @@
 <table class="cart-items">
+    <p class="yc">Your cart</p>
     
     <thead>
         <tr>
+            <th>Image</th>
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -11,32 +13,49 @@
     </thead>
     
     <tbody>
+        {% assign total = 0 %}
         {% for item in cart.items %}
-        <tr class="cart-item">
-            <td>{{ item.title }}</td>
-            <td>{{ item.price | money }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.line_price | money }}</td>
-            <td>
-                <form action="/cart/change" method="post">
-                    <input type="hidden" name="line" value="{{ item.key }}">
-                    <input type="hidden" name="quantity" value="0">
-                    <button type="submit" class="remove-button">Remove</button>
-                </form>
-            </td>
-        </tr>
+            <tr class="cart-item">
+                <td>
+                    {% if item.product.featured_image %}
+                        <img src="{{ item.product.featured_image.src | img_url: 'medium' }}" alt="{{ item.product.title }}" height="100px" width="100px">
+                    {% endif %}
+                </td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.price | money }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.line_price | money }}</td>
+                <td>
+                    <form action="/cart/change" method="post">
+                        <input type="hidden" name="line" value="{{ item.key }}">
+                        <input type="hidden" name="quantity" value="0">
+                        <button type="submit" class="remove-button">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            {% assign total = total | plus: item.line_price %}
         {% endfor %}
     </tbody>
     
     <tfoot>
         <tr>
             <td colspan="4"></td>
+            <td>Total: {{ total | money }}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
             <td><a href="/checkout" class="checkout-button">Checkout</a></td>
         </tr>
     </tfoot>
 </table>
-<style>
 
+<style>
+.yc{
+    margin-left: 2rem;
+    font-size: 30px;
+    font-weight: 500;
+}
 .cart-items {
     width: 100%;
     border-collapse: collapse;
@@ -67,8 +86,8 @@
 
 
 .checkout-button {
-    display: inline-block;
-    background-color: #4CAF50;
+
+    background-color: #007bff; 
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -76,10 +95,12 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-bottom: 16rem;;
+    float: right;
 }
 
 .checkout-button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
 </style>
