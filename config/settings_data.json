@@ -117,8 +117,20 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "checkout_body_background_color": "#ddf0f6",
+    "checkout_body_background_color": "#ffffff",
     "checkout_sidebar_background_color": "#f3f3f3",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
     "content_for_index": [
 
     ],
