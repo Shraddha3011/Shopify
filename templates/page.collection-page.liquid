@@ -27,14 +27,13 @@
 }
 
 .collection-section {
-  width:full; 
-  margin: 20px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width:full;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
-
 .collection-section h2 {
   margin-bottom: 10px;
 }
@@ -45,19 +44,28 @@
 }
 
 .product-row {
-    justify-content: space-evenly;
-  display: flex;
+  justify-content: space-evenly;
+    display: flex;
   flex-wrap: nowrap; 
 }
 
 .product-card {
-  margin-right: 20px; 
-  margin-bottom: 20px;
+  margin-right: 1rem;
+  width: calc(50% - 10px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s;
 }
 
 .product-card img {
-  width: 100%;
-  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+    height:250px;
+    border-radius: 8px;
 }
 
 .product-card h4 {
