@@ -118,7 +118,10 @@
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
     "checkout_body_background_color": "#ffffff",
-    "checkout_sidebar_background_color": "#f3f3f3",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#ddf0f6",
+    "checkout_body_font": "Lato",
+    "checkout_accent_color": "#1773b0",
     "sections": {
       "header": {
         "type": "header",
