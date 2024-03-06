@@ -1,3 +1,4 @@
+<!-- HTML form -->
 <form id="addProductForm">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title"><br><br>
@@ -12,7 +13,7 @@
 </form>
 
 <script>
- async function addProduct() {
+async function addProduct() {
     const title = document.getElementById('title').value;
     const price = document.getElementById('price').value;
     const description = document.getElementById('description').value;
@@ -22,7 +23,7 @@
             title,
             body_html: description,
             variants: [{ price }],
-
+            status: "draft"
         }
     };
 
@@ -36,6 +37,10 @@
             body: JSON.stringify(productData)
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
         console.log('Product added:', data);
         alert('Product added successfully');
@@ -45,6 +50,7 @@
     }
 }
 </script>
+
 <style>
 
 form {
