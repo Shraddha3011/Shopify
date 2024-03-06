@@ -1,5 +1,5 @@
-<form action="/add-product" method="post">
-    <label class="title"for="title">Title:</label>
+<form id="addProductForm">
+    <label for="title">Title:</label>
     <input type="text" id="title" name="title"><br><br>
     
     <label for="price">Price:</label>
@@ -8,8 +8,51 @@
     <label for="description">Description:</label><br>
     <textarea id="description" name="description"></textarea><br><br>
     
-    <button type="submit">Add Product</button>
+    <button type="button" onclick="addProduct()">Add Product</button>
 </form>
+
+<script>
+async function addProduct() {
+    const title = document.getElementById('title').value;
+    const price = document.getElementById('price').value;
+    const description = document.getElementById('description').value;
+
+    const productData = {
+        title: title,
+        variants: [{ price: price }],
+        description: description
+    };
+
+    try {
+        const response = await fetch('https://medimartstore.myshopify.com/api/2024-01/graphql.json', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Shopify-Storefront-Access-Token': '1b9b0d2e735593f109536c7b201527be'
+            },
+            body: JSON.stringify({
+                query: `
+                    mutation {
+                        productCreate(input: { product: ${JSON.stringify(productData)} }) {
+                            product {
+                                id
+                                title
+                            }
+                        }
+                    }
+                `
+            })
+        });
+
+        const data = await response.json();
+        console.log('Product added:', data);
+        alert('Product added successfully');
+    } catch (error) {
+        console.error('Error adding product:', error);
+        alert('Failed to add product');
+    }
+}
+</script>
 <style>
 
 form {
