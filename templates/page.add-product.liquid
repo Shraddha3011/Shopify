@@ -24,7 +24,13 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ title, price, description })
+           body: JSON.stringify({
+                "product": {
+                    "title": title,
+                    "variants": [{ "price": price }],
+                    "body_html": description
+                }
+            })
         });
         
         const result = await response.json();
