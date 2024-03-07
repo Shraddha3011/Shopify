@@ -22,19 +22,20 @@
         const price = document.getElementById('price').value;
         const description = document.getElementById('description').value;
     
-        const response = await fetch(`https://{`${apiKey}:${password}`}@${shopUrl}/admin/api/2024-01/products.json`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "product": {
-                    "title": title,
-                    "variants": [{ "price": price }],
-                    "body_html": description
-                }
-            })
-        });
+      const response = await fetch(`https://${apiKey}:${password}@${shopUrl}/admin/api/2024-01/products.json`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        "product": {
+            "title": title,
+            "variants": [{ "price": price }],
+            "body_html": description
+        }
+    })
+});
+
 
         const result = await response.json();
         alert(result.message);
