@@ -21,14 +21,11 @@
         const title = document.getElementById('title').value;
         const price = document.getElementById('price').value;
         const description = document.getElementById('description').value;
-        
-        const authHeader = 'Basic ' + btoa(apiKey + ':' + password);
-        console.log(authHeader);
+    
         const response = await fetch(`https://{`${apiKey}:${password}`}@${shopUrl}/admin/api/2024-01/products.json`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': authHeader
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 "product": {
