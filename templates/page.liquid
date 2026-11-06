@@ -1,1 +1,11 @@
-{% include "page-header",title:{{page.title}}%}
+{% include "page-header", title: page.title %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% include "page-header",title:{{page.title}}%}'
+  to: '{% include "page-header", title: page.title %}'
+  position: 0..46
+{% endcomment %}
